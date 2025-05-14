@@ -6,7 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
 import CategoryPage from "./pages/CategoryPage";
 
-//import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 
 import Navbar from "./components/Navbar";
 import { Toaster } from "react-hot-toast";
@@ -57,10 +57,10 @@ function App() {
             element={!user ? <LoginPage /> : <Navigate to="/" />}
           />
 
-        {/* <Route
+        <Route
             path="/forgotpassword"
             element={!user ? <ForgotPasswordPage /> : <Navigate to="/" />}
-          /> */}
+          />
 
 
           <Route

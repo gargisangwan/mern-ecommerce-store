@@ -39,7 +39,16 @@ const userSchema = new mongoose.Schema(
 	},
 	{
 		timestamps: true,
+	},
+
+	
+	{
+		resetToken: String,
+	},
+	{
+		resetTokenExpire: Date,
 	}
+	
 );
 
 // Pre-save hook to hash password before saving to database

@@ -1,8 +1,7 @@
 import express from "express";
 
-import { login, logout, signup, refreshToken, getProfile } from "../controllers/auth.controller.js";
-//import { verifyEmail, forgotPassword, resetPassword, checkAuth } from "../controllers/auth.controller.js";
-//import { verifyToken } from "../middleware/verifyToken.js";
+import { login, logout, signup, refreshToken, getProfile, forgotPassword, resetPassword} from "../controllers/auth.controller.js";
+
 import { protectRoute } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
@@ -13,10 +12,10 @@ router.post("/signup", signup);
 router.post("/login", login);
 router.post("/logout", logout);
 
-// router.post("/verify-email", verifyEmail);
-// router.post("/forgot-password", forgotPassword);
 
-// router.post("/reset-password/:token", resetPassword);
+router.post("/forgot-password", forgotPassword);
+router.post("/reset-password", protectRoute, resetPassword);
+
 
 router.post("/refresh-token", refreshToken);
 router.get("/profile", protectRoute, getProfile);
